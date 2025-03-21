@@ -1,0 +1,241 @@
+@model List<RestaurantApp.Models.MenuItem>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Elegant Bistro</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
+    
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#home">Elegant Bistro</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#menu">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reservation">Reservation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Home Section -->
+        <section id="home" class="d-flex align-items-center">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="display-4 fw-bold mb-4">Welcome to Elegant Bistro</h1>
+                    <p class="lead mb-5">Experience the finest culinary delights in an atmosphere of elegance and comfort</p>
+                    <a href="#reservation" class="btn btn-primary btn-lg">Reserve a Table</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu">
+            <div class="container">
+                <h2 class="section-heading">Our Menu</h2>
+                <div class="row g-4">
+                    <!-- Menu Item 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card menu-card">
+                            <div class="menu-img">
+                                <img src="images/pasta.jpeg" class="card-img-top" alt="Pasta Dish" />
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Truffle Pasta</h3>
+                                <div class="menu-price">$24.99</div>
+                                <p class="card-text">Handmade pasta with black truffle cream sauce, topped with aged parmesan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Item 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card menu-card">
+                            <div class="menu-img">
+                                <img src="images/steak.jpeg" class="card-img-top" alt="Steak" />
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Prime Ribeye</h3>
+                                <div class="menu-price">$36.99</div>
+                                <p class="card-text">28-day aged ribeye steak, served with rosemary potatoes and seasonal vegetables.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Menu Item 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card menu-card">
+                            <div class="menu-img">
+                                <img src="images/cake.jpeg" class="card-img-top" alt="Dessert" />
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title">Chocolate Lava Cake</h3>
+                                <div class="menu-price">$12.99</div>
+                                <p class="card-text">Warm chocolate cake with a molten center, served with vanilla bean ice cream.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation Section -->
+        <section id="reservation">
+            <div class="form-container">
+    <h3 class="form-title">Make a Reservation</h3>
+    <form id="reservationForm">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="guests" class="form-label">Number of Guests</label>
+                    <select class="form-select" id="guests" required>
+                        <option value="">Select</option>
+                        <option value="1">1 Person</option>
+                        <option value="2">2 People</option>
+                        <option value="3">3 People</option>
+                        <option value="4">4 People</option>
+                        <option value="5">5 People</option>
+                        <option value="6">6+ People</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" class="form-control" id="date" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="time" class="form-label">Time</label>
+                    <select class="form-select" id="time" required>
+                        <option value="">Select</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="13:00">1:00 PM</option>
+                        <option value="14:00">2:00 PM</option>
+                        <option value="18:00">6:00 PM</option>
+                        <option value="19:00">7:00 PM</option>
+                        <option value="20:00">8:00 PM</option>
+                        <option value="21:00">9:00 PM</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="message" class="form-label">Special Requests</label>
+            <textarea class="form-control" id="message" rows="3"></textarea>
+            <div class="form-text">Please let us know about any dietary restrictions or special occasions.</div>
+        </div>
+        <button type="submit" class="reservation-btn">Book Your Table</button>
+    </form>
+</div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-heading">Contact Us</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="contact-info">
+                            <h3 class="mb-4">Get in Touch</h3>
+                            <div class="info-item">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <p>123 Culinary Boulevard, Foodie City, FC 12345</p>
+                            </div>
+                            <div class="info-item">
+                                <i class="bi bi-telephone-fill"></i>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                            <div class="info-item">
+                                <i class="bi bi-envelope-fill"></i>
+                                <p>info@elegantbistro.com</p>
+                            </div>
+                            <div class="info-item">
+                                <i class="bi bi-clock-fill"></i>
+                                <div>
+                                    <p><strong>Monday - Thursday:</strong> 11:00 AM - 10:00 PM</p>
+                                    <p><strong>Friday - Saturday:</strong> 11:00 AM - 11:00 PM</p>
+                                    <p><strong>Sunday:</strong> 11:00 AM - 9:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215171501964!2d-73.97824292348792!3d40.78271413901256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2589a018531e3%3A0xb9df1f7387a94119!2sCentral%20Park!5e0!3m2!1sen!2sus!4v1616456264705!5m2!1sen!2sus" style="border:0; width:100%; height:100%;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="social-links mb-3">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-envelope"></i></a>
+                </div>
+                <p>&copy; 2025 Elegant Bistro. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </form>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
